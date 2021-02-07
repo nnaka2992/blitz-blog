@@ -1,6 +1,7 @@
 import React from "react"
 import { LabeledTextField } from "app/components/LabeledTextField"
 import { Form } from "app/components/Form"
+import { Textarea } from "@chakra-ui/react"
 import * as z from "zod"
 
 const ProjectInput = z.object({
@@ -19,8 +20,17 @@ export const ProjectForm = ({initialValues, onSubmit}: {
               initialValues={initialValues}
               onSubmit={(values) => {onSubmit(values)}}
             >
-              <LabeledTextField name="name" label="name" placeholder="name" />
-              <LabeledTextField name="text" label="text" placeholder="text" />
+              <LabeledTextField
+                  name="name"
+                  label="name"
+                  placeholder="name"
+              />
+              <textarea
+                  name="text"
+                  label="text"
+                  placeholder="text"
+              />
+              <br />
             </Form>
         )
     }
