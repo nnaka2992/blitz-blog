@@ -3,6 +3,7 @@ import Layout from "app/layouts/Layout"
 import logout from "app/auth/mutations/logout"
 import { useCurrentUser } from "app/hooks/useCurrentUser"
 import { Suspense } from "react"
+import { Heading, Box } from "@chakra-ui/react"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -56,9 +57,9 @@ const Home: BlitzPage = () => {
         <div className="logo">
           <img src="/logo.png" alt="blitz.js" />
         </div>
-        <p>
-          <strong>Congrats!</strong> Your app is ready, including user sign-up and log-in.
-        </p>
+        <Box>
+          <Heading>Blitz Blog</Heading>
+        </Box>
         <div className="buttons" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           <Suspense fallback="Loading...">
             <UserInfo />
