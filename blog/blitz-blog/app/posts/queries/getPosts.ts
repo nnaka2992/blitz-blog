@@ -1,13 +1,11 @@
-import { Ctx } from "blitz"
+import { useSession } from "blitz"
 import db, { Prisma } from "db"
 
 type GetPostsInput = Pick<Prisma.FindManyPostArgs, "where" | "orderBy" | "skip" | "take">
 
 export default async function getPosts(
-  { where, orderBy, skip = 0, take }: GetPostsInput,
-  ctx: Ctx
+  { where, orderBy, skip = 0, take }: GetPostsInput
 ) {
-  ctx.session.authorize()
 
   const posts = await db.post.findMany({
     where,
